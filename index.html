@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matteo Piras · Robotics Portfolio</title>
+<meta name="description" content="Matteo Piras, mechatronics and robotics engineer. Legged robots, custom actuators, embedded control.">
+<style>
+:root{--ink:#14161a;--mute:#5d636e;--line:#e4e6ea;--bg:#fbfbfa;--card:#fff;--accent:#d2491f;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:10;background:rgba(251,251,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+nav .name{font-weight:700;letter-spacing:.2px;text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:15px}
+nav ul a{text-decoration:none;color:var(--mute)}
+nav ul a:hover{color:var(--ink)}
+header.hero{padding:90px 0 60px}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.05;margin:0 0 18px;letter-spacing:-1.5px}
+.hero p.lead{font-size:21px;color:var(--mute);max-width:720px;margin:0 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;font-size:15px;font-weight:600}
+.btn.primary{background:var(--ink);color:#fff}
+.facts{display:flex;gap:40px;flex-wrap:wrap;margin-top:48px;padding-top:28px;border-top:1px solid var(--line);font-size:15px;color:var(--mute)}
+.facts b{display:block;color:var(--ink);font-size:16px}
+section.project{padding:70px 0;border-top:1px solid var(--line)}
+.tag{font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 8px;letter-spacing:-.8px}
+.meta{color:var(--mute);font-size:15px;margin:0 0 26px}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
+.text p{margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin:26px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:24px;letter-spacing:-.5px}
+.stat span{font-size:13px;color:var(--mute)}
+video,.fig img{width:100%;display:block;border-radius:12px;background:#000}
+.main-media{margin-bottom:34px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:30px}
+.fig{margin:0}
+.fig img{background:#fff;border:1px solid var(--line);aspect-ratio:4/3;object-fit:cover}
+.fig img.contain{object-fit:contain}
+.fig img.dark{background:#2b2b2b;border-color:#2b2b2b}
+.fig video{aspect-ratio:9/16;object-fit:cover;max-height:520px}
+video:fullscreen,video:-webkit-full-screen{object-fit:contain!important;max-height:none!important;aspect-ratio:auto!important;width:100%;height:100%;border-radius:0;background:#000}
+figcaption{font-size:14px;color:var(--mute);margin-top:8px}
+ul.points{padding-left:20px;margin:0 0 16px}
+ul.points li{margin-bottom:8px}
+.exp{padding:70px 0;border-top:1px solid var(--line)}
+.exp-item{display:grid;grid-template-columns:220px 1fr;gap:30px;padding:22px 0;border-bottom:1px solid var(--line)}
+.exp-item:last-child{border-bottom:0}
+.exp-item .when{color:var(--mute);font-size:15px}
+.exp-item h3{margin:0 0 4px;font-size:19px}
+.exp-item p{margin:0;color:var(--mute)}
+footer{padding:60px 0 80px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+footer a{color:var(--ink)}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr;gap:4px}nav ul{display:none}header.hero{padding:60px 0 40px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="name" href="#top">Matteo Piras</a>
+  <ul>
+    <li><a href="#astra">Astra</a></li>
+    <li><a href="#course-robot">Course Robot</a></li>
+    <li><a href="#localization">Localization</a></li>
+    <li><a href="#padova">Earlier Quadrupeds</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <h1>I design and build<br>legged robots, end to end.</h1>
+  <p class="lead">Mechatronics and robotics engineer, M.S. at NYU Tandon (December 2026). Mechanical design, custom actuators, embedded electronics and control: from the first CAD sketch to a robot that stands on its own legs.</p>
+  <div class="btns">
+    <a class="btn primary" href="assets/Matteo_Piras_Resume.pdf">Resume (PDF)</a>
+    <a class="btn" href="mailto:mp7471@nyu.edu">mp7471@nyu.edu</a>
+  </div>
+  <div class="facts">
+    <div><b>M.S. Mechatronics &amp; Robotics</b>NYU Tandon · GPA 3.88</div>
+    <div><b>B.S. Mechatronic Engineering</b>University of Padua</div>
+    <div><b>Engineering Intern</b>Infinite Machine, summer 2026</div>
+    <div><b>Course Assistant</b>ROB-UY 3303, fall 2026</div>
+  </div>
+</div></header>
+
+<section class="project" id="astra"><div class="wrap">
+  <p class="tag">M.S. thesis · NYU Tandon</p>
+  <h2>Astra: a highly dynamic quadruped</h2>
+  <p class="meta">December 2025 – present · Advisor: Prof. Chris Clark · Co-advisor: Prof. Ludovic Righetti</p>
+  <div class="main-media">
+    <video src="assets/astra_stand.mp4" poster="assets/astra_stand_poster.jpg" autoplay muted loop playsinline controls></video>
+  </div>
+  <div class="grid2">
+    <div class="text">
+      <p>Astra is a 12-degree-of-freedom, ~17 kg quadruped I am designing and building to run, jump and eventually backflip, at about a third of the cost of a comparable commercial robot.</p>
+      <p>Everything on Astra is designed and manufactured from scratch. The structural parts are printed in PPA-CF, a carbon-fiber-reinforced engineering polymer, with TPU feet. Every joint is driven by an actuator I designed: a large brushless motor with a 10:1 cycloidal reducer whose cycloidal disks are custom-machined, giving the torque, speed and backdrivability that dynamic motion needs.</p>
+      <p>I also wrote the control software, with safety monitoring built in from the start, and a physics simulation of the robot that I validated against the real hardware.</p>
+      <p>Today Astra stands up on its own and controls its body roll, pitch and yaw. Walking comes next, then dynamic gaits.</p>
+    </div>
+    <div>
+      <div class="stats">
+        <div class="stat"><b>12</b><span>actuated joints</span></div>
+        <div class="stat"><b>~17 kg</b><span>total mass</span></div>
+        <div class="stat"><b>10:1</b><span>cycloidal reduction</span></div>
+        <div class="stat"><b>0.006°</b><span>mean static position error</span></div>
+        <div class="stat"><b>20.6 Nm</b><span>peak torque, current-limited</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery">
+    <figure class="fig"><img class="contain dark" src="assets/actuator_cad.jpg" alt="Actuator CAD, first and second version"><figcaption>Actuator, first and second design iteration.</figcaption></figure>
+    <figure class="fig"><img class="contain dark" src="assets/leg_cad.jpg" alt="Leg CAD"><figcaption>Leg assembly in Fusion 360.</figcaption></figure>
+    <figure class="fig"><img class="contain dark" src="assets/astra_cad.jpg" alt="Full Astra CAD model"><figcaption>The complete robot in CAD.</figcaption></figure>
+  </div>
+  <div class="gallery">
+    <figure class="fig"><img class="contain" src="assets/plot_position.jpg" alt="Position tracking plot"><figcaption>Actuator position tracking: commanded vs. measured.</figcaption></figure>
+    <figure class="fig"><img class="contain" src="assets/plot_torque.jpg" alt="Torque linearity plot"><figcaption>Static torque: measured vs. commanded.</figcaption></figure>
+  </div>
+  <div class="gallery">
+    <figure class="fig"><video src="assets/astra_assembly.mp4" poster="assets/astra_assembly_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Assembling the robot.</figcaption></figure>
+    <figure class="fig"><video src="assets/leg_ik.mp4" poster="assets/leg_ik_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Single-leg test: inverse kinematics along x, y and z.</figcaption></figure>
+    <figure class="fig"><video src="assets/actuator_accuracy.mp4" poster="assets/actuator_accuracy_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Actuator test: position accuracy after 10 revolutions.</figcaption></figure>
+    <figure class="fig"><video src="assets/actuator_speed.mp4" poster="assets/actuator_speed_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Actuator test: speed.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="project" id="course-robot"><div class="wrap">
+  <p class="tag">Teaching · NYU Tandon</p>
+  <h2>The robot for ROB-UY 3303 Robot Motion and Planning</h2>
+  <p class="meta">Fall 2026 · Course Assistant for Prof. Chris Clark</p>
+  <div class="grid2">
+    <div class="text">
+      <p>I designed the robot that every team in the course builds and programs during the semester: a differential-drive platform with wheel encoders, an IMU and a 360° LiDAR, run by an ESP32 that students control over WiFi from a Python GUI.</p>
+      <ul class="points">
+        <li>Designed the chassis and electronics layout for easy assembly by students.</li>
+        <li>Wrote the ESP32 firmware and the Python control and telemetry GUI.</li>
+        <li>Wrote a 19-page illustrated assembly manual.</li>
+        <li>Designed and delivered 15 kits, one per team, for about 30 students.</li>
+      </ul>
+    </div>
+    <figure class="fig"><img src="assets/course_robot_assembled.jpg" alt="Assembled course robot"><figcaption>The assembled robot.</figcaption></figure>
+  </div>
+  <div class="gallery">
+    <figure class="fig"><img src="assets/course_robot_internals.jpg" alt="Robot internals"><figcaption>Inside the chassis, from the assembly manual.</figcaption></figure>
+    <figure class="fig"><img class="contain" src="assets/course_robot_gui.jpg" alt="Control GUI"><figcaption>Control GUI with live LiDAR scan.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="project" id="localization"><div class="wrap">
+  <p class="tag">Course project · NYU Tandon</p>
+  <h2>Localization and coverage for an autonomous cleaning robot</h2>
+  <p class="meta">Spring 2026 · with Berinay Demirci</p>
+  <div class="grid2">
+    <div class="text">
+      <p>A localization system for a small differential-drive robot in a known indoor map. Wheel-encoder and gyroscope odometry is corrected by a particle filter that compares LiDAR distances with the walls expected from the map. The position estimate then drives a coverage path across the room.</p>
+      <div class="stats">
+        <div class="stat"><b>2.90 cm</b><span>mean localization error</span></div>
+        <div class="stat"><b>3.11 cm</b><span>RMSE over 20 trials</span></div>
+        <div class="stat"><b>~70%</b><span>coverage in about 2 min</span></div>
+      </div>
+    </div>
+    <figure class="fig"><video src="assets/localization.mp4" poster="assets/localization_poster.jpg" muted loop playsinline controls preload="none" style="aspect-ratio:auto;max-height:none"></video><figcaption>Full coverage run: live GUI with the map and position estimate (top), the robot seen from above (bottom).</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="project" id="padova"><div class="wrap">
+  <p class="tag">B.S. thesis · University of Padua</p>
+  <h2>Bio-inspired quadruped, and the two before it</h2>
+  <p class="meta">2024 – 2025</p>
+  <div class="grid2">
+    <div class="text">
+      <p>My bachelor's thesis robot was the third quadruped I built, after two earlier personal prototypes. Its leg design and gait were inspired by animal biomechanics.</p>
+      <p>I implemented the inverse kinematics in C on a Raspberry Pi, with posture and balance control on an Arduino. Each robot taught me something that went into the next one, and the lessons from all three shaped Astra.</p>
+    </div>
+    <figure class="fig"><video src="assets/padova_quadruped.mp4" poster="assets/padova_quadruped_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>The thesis quadruped.</figcaption></figure>
+  </div>
+  <div class="gallery">
+    <figure class="fig"><img class="contain" src="assets/thesis_poses.jpg" alt="Seated and standing poses"><figcaption>Seated and standing poses, side and front view.</figcaption></figure>
+    <figure class="fig"><img class="contain" src="assets/thesis_ik.jpg" alt="Leg inverse kinematics geometry"><figcaption>Leg inverse kinematics: geometry in the two planes.</figcaption></figure>
+    <figure class="fig"><img class="contain" src="assets/thesis_moves.jpg" alt="Implemented movements"><figcaption>The movements implemented: forward, backward and rotation.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="exp" id="experience"><div class="wrap">
+  <p class="tag">Experience</p>
+  <h2>Where I have worked</h2>
+  <div class="exp-item">
+    <div class="when">June – August 2026</div>
+    <div><h3>Engineering Intern · Infinite Machine</h3><p>Primary engineer on an autonomous climbing robot, from concept to a functioning, validated prototype: mechanical design, fabrication, electronics, control and testing. Also contributed to other products. Details are confidential.</p></div>
+  </div>
+  <div class="exp-item">
+    <div class="when">September – December 2026</div>
+    <div><h3>Course Assistant · NYU Tandon</h3><p>ROB-UY 3303 Robot Motion and Planning: designed the course robot and kits, firmware, GUI and manual; weekly lab office hours.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Matteo Piras · New York, NY · <a href="mailto:mp7471@nyu.edu">mp7471@nyu.edu</a> · <a href="assets/Matteo_Piras_Resume.pdf">Resume</a>
+</div></footer>
+
+</body>
+</html>
