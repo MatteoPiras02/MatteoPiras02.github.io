@@ -70,6 +70,8 @@ footer a{color:var(--ink)}
 .btn-more[aria-expanded="true"] svg{transform:rotate(180deg)}
 .more-content{display:none}
 .more-content.is-open{display:block}
+.fig video.video-loc{aspect-ratio:auto;max-height:310px;object-fit:contain}
+.fig video.video-padova{aspect-ratio:auto;max-height:290px;object-fit:contain}
 </style>
 </head>
 <body>
@@ -103,7 +105,7 @@ footer a{color:var(--ink)}
 <section class="project" id="astra"><div class="wrap">
   <p class="tag">M.S. thesis · NYU Tandon</p>
   <h2>Astra: a highly dynamic quadruped</h2>
-  <p class="meta">December 2025 – present · Advisor: Prof. Chris Clark · Co-advisor: Prof. Ludovic Righetti</p>
+  <p class="meta">December 2025 – present · CREO Lab, NYU · Advisor: Prof. Chris Clark · Co-advisor: Prof. Ludovic Righetti</p>
   <div class="main-media">
     <div class="duo">
       <figure class="fig"><video src="assets/astra_walk.mp4" poster="assets/astra_walk_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Walking forward.</figcaption></figure>
@@ -182,7 +184,7 @@ footer a{color:var(--ink)}
 <section class="project" id="localization"><div class="wrap">
   <p class="tag">Course project · NYU Tandon</p>
   <h2>Localization and coverage for an autonomous cleaning robot</h2>
-  <p class="meta">Spring 2026 · with Berinay Demirci</p>
+  <p class="meta">Spring 2026</p>
   <div class="grid2">
     <div class="text">
       <p>A localization system for a small differential-drive robot in a known indoor map. Wheel-encoder and gyroscope odometry is corrected by a particle filter that compares LiDAR distances with the walls expected from the map. The position estimate then drives a coverage path across the room.</p>
@@ -192,7 +194,7 @@ footer a{color:var(--ink)}
         <div class="stat"><b>~70%</b><span>coverage in about 2 min</span></div>
       </div>
     </div>
-    <figure class="fig"><video src="assets/localization.mp4" poster="assets/localization_poster.jpg" muted loop playsinline controls preload="none" style="aspect-ratio:auto;max-height:none"></video><figcaption>Full coverage run: live GUI with the map and position estimate (top), the robot seen from above (bottom).</figcaption></figure>
+    <figure class="fig"><video class="video-loc" src="assets/localization.mp4" poster="assets/localization_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Full coverage run: live GUI with the map and position estimate (top), the robot seen from above (bottom).</figcaption></figure>
   </div>
 </div></section>
 
@@ -205,7 +207,7 @@ footer a{color:var(--ink)}
       <p>My bachelor's thesis robot was the third quadruped I built, after two earlier personal prototypes. Its leg design and gait were inspired by animal biomechanics.</p>
       <p>I implemented the inverse kinematics in C on a Raspberry Pi, with posture and balance control on an Arduino. Each robot taught me something that went into the next one, and the lessons from all three shaped Astra.</p>
     </div>
-    <figure class="fig"><video src="assets/padova_quadruped.mp4" poster="assets/padova_quadruped_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>The thesis quadruped.</figcaption></figure>
+    <figure class="fig"><video class="video-padova" src="assets/padova_quadruped.mp4" poster="assets/padova_quadruped_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>The thesis quadruped.</figcaption></figure>
   </div>
   <div class="gallery">
     <figure class="fig"><img class="contain" src="assets/thesis_poses.jpg" alt="Seated and standing poses"><figcaption>Seated and standing poses, side and front view.</figcaption></figure>
