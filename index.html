@@ -63,6 +63,13 @@ ul.points li{margin-bottom:8px}
 footer{padding:60px 0 80px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
 footer a{color:var(--ink)}
 @media (max-width:820px){.grid2{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr;gap:4px}nav ul{display:none}header.hero{padding:60px 0 40px}}
+.more-wrap{margin-top:26px}
+.btn-more{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:border-color .15s ease}
+.btn-more:hover{border-color:var(--ink)}
+.btn-more svg{width:16px;height:16px;transition:transform .2s ease}
+.btn-more[aria-expanded="true"] svg{transform:rotate(180deg)}
+.more-content{display:none}
+.more-content.is-open{display:block}
 </style>
 </head>
 <body>
@@ -125,20 +132,28 @@ footer a{color:var(--ink)}
       </div>
     </div>
   </div>
-  <div class="gallery">
-    <figure class="fig"><img class="contain dark" src="assets/actuator_cad.jpg" alt="Actuator CAD, first and second version"><figcaption>Actuator, first and second design iteration.</figcaption></figure>
-    <figure class="fig"><img class="contain dark" src="assets/leg_cad.jpg" alt="Leg CAD"><figcaption>Leg assembly in Fusion 360.</figcaption></figure>
-    <figure class="fig"><img class="contain dark" src="assets/astra_cad.jpg" alt="Full Astra CAD model"><figcaption>The complete robot in CAD.</figcaption></figure>
+  <div id="astra-more" class="more-content">
+    <div class="gallery">
+      <figure class="fig"><img class="contain dark" src="assets/actuator_cad.jpg" alt="Actuator CAD, first and second version"><figcaption>Actuator, first and second design iteration.</figcaption></figure>
+      <figure class="fig"><img class="contain dark" src="assets/leg_cad.jpg" alt="Leg CAD"><figcaption>Leg assembly in Fusion 360.</figcaption></figure>
+      <figure class="fig"><img class="contain dark" src="assets/astra_cad.jpg" alt="Full Astra CAD model"><figcaption>The complete robot in CAD.</figcaption></figure>
+    </div>
+    <div class="gallery">
+      <figure class="fig"><img class="contain" src="assets/plot_position.jpg" alt="Position tracking plot"><figcaption>Actuator position tracking: commanded vs. measured.</figcaption></figure>
+      <figure class="fig"><img class="contain" src="assets/plot_torque.jpg" alt="Torque linearity plot"><figcaption>Static torque: measured vs. commanded.</figcaption></figure>
+    </div>
+    <div class="gallery">
+      <figure class="fig"><video src="assets/astra_assembly.mp4" poster="assets/astra_assembly_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Assembling the robot.</figcaption></figure>
+      <figure class="fig"><video src="assets/leg_ik.mp4" poster="assets/leg_ik_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Single-leg test: inverse kinematics along x, y and z.</figcaption></figure>
+      <figure class="fig"><video src="assets/actuator_accuracy.mp4" poster="assets/actuator_accuracy_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Actuator test: position accuracy after 10 revolutions.</figcaption></figure>
+      <figure class="fig"><video src="assets/actuator_speed.mp4" poster="assets/actuator_speed_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Actuator test: speed.</figcaption></figure>
+    </div>
   </div>
-  <div class="gallery">
-    <figure class="fig"><img class="contain" src="assets/plot_position.jpg" alt="Position tracking plot"><figcaption>Actuator position tracking: commanded vs. measured.</figcaption></figure>
-    <figure class="fig"><img class="contain" src="assets/plot_torque.jpg" alt="Torque linearity plot"><figcaption>Static torque: measured vs. commanded.</figcaption></figure>
-  </div>
-  <div class="gallery">
-    <figure class="fig"><video src="assets/astra_assembly.mp4" poster="assets/astra_assembly_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Assembling the robot.</figcaption></figure>
-    <figure class="fig"><video src="assets/leg_ik.mp4" poster="assets/leg_ik_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Single-leg test: inverse kinematics along x, y and z.</figcaption></figure>
-    <figure class="fig"><video src="assets/actuator_accuracy.mp4" poster="assets/actuator_accuracy_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Actuator test: position accuracy after 10 revolutions.</figcaption></figure>
-    <figure class="fig"><video src="assets/actuator_speed.mp4" poster="assets/actuator_speed_poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Actuator test: speed.</figcaption></figure>
+  <div class="more-wrap">
+    <button type="button" class="btn-more" id="astra-more-btn" aria-expanded="false" aria-controls="astra-more">
+      <span class="label">More</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
   </div>
 </div></section>
 
@@ -215,6 +230,24 @@ footer a{color:var(--ink)}
 <footer><div class="wrap">
   Matteo Piras · New York, NY · <a href="mailto:mp7471@nyu.edu">mp7471@nyu.edu</a> · <a href="assets/Matteo_Piras_Resume.pdf">Resume</a>
 </div></footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('astra-more-btn');
+  var box = document.getElementById('astra-more');
+  if (!btn || !box) return;
+  var label = btn.querySelector('.label');
+  btn.addEventListener('click', function () {
+    var open = box.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    label.textContent = open ? 'Less' : 'More';
+    if (!open) {
+      box.querySelectorAll('video').forEach(function (v) { v.pause(); });
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
