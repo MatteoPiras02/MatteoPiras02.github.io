@@ -40,6 +40,9 @@ video,.fig img{width:100%;display:block;border-radius:12px;background:#000}
 .main-media{margin-bottom:34px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .duo .fig video{aspect-ratio:16/9;max-height:none;object-fit:cover}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.trio .fig video{aspect-ratio:16/9;max-height:none;object-fit:cover}
+@media (max-width:820px){.trio{grid-template-columns:1fr}}
 @media (max-width:820px){.duo{grid-template-columns:1fr}}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:30px}
 .fig{margin:0}
@@ -96,8 +99,13 @@ footer a{color:var(--ink)}
   <p class="meta">December 2025 – present · Advisor: Prof. Chris Clark · Co-advisor: Prof. Ludovic Righetti</p>
   <div class="main-media">
     <div class="duo">
-      <figure class="fig"><video src="assets/astra_walk.mp4" poster="assets/astra_walk_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Walking.</figcaption></figure>
+      <figure class="fig"><video src="assets/astra_walk.mp4" poster="assets/astra_walk_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Walking forward.</figcaption></figure>
       <figure class="fig"><video src="assets/astra_stand.mp4" poster="assets/astra_stand_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Standing up and controlling body roll, pitch and yaw.</figcaption></figure>
+    </div>
+    <div class="trio">
+      <figure class="fig"><video src="assets/astra_backward.mp4" poster="assets/astra_backward_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Walking backward.</figcaption></figure>
+      <figure class="fig"><video src="assets/astra_left.mp4" poster="assets/astra_left_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Moving sideways to the left.</figcaption></figure>
+      <figure class="fig"><video src="assets/astra_right.mp4" poster="assets/astra_right_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Moving sideways to the right.</figcaption></figure>
     </div>
   </div>
   <div class="grid2">
@@ -105,7 +113,7 @@ footer a{color:var(--ink)}
       <p>Astra is a 12-degree-of-freedom, ~17 kg quadruped I am designing and building to run, jump and eventually backflip, at about a third of the cost of a comparable commercial robot.</p>
       <p>Everything on Astra is designed and manufactured from scratch. The structural parts are printed in PPA-CF, a carbon-fiber-reinforced engineering polymer, with TPU feet. Every joint is driven by an actuator I designed: a large brushless motor with a 10:1 cycloidal reducer whose cycloidal disks are custom-machined, giving the torque, speed and backdrivability that dynamic motion needs.</p>
       <p>I also wrote the control software, with safety monitoring built in from the start, and a physics simulation of the robot that I validated against the real hardware.</p>
-      <p>Astra now stands up on its own, controls its body roll, pitch and yaw, and walks. Next come dynamic gaits: running, jumping and backflips.</p>
+      <p>Astra now stands up on its own, controls its body roll, pitch and yaw, and walks forward, backward and sideways. Next come dynamic gaits: running, jumping and backflips.</p>
     </div>
     <div>
       <div class="stats">
