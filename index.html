@@ -6,13 +6,13 @@
 <title>Matteo Piras · Robotics Portfolio</title>
 <meta name="description" content="Matteo Piras, mechatronics and robotics engineer. Legged robots, custom actuators, embedded control.">
 <style>
-:root{--ink:#14161a;--mute:#5d636e;--line:#dcd8d0;--bg:#efede8;--card:#fbfaf8;--accent:#d2491f;}
+:root{--ink:#14161a;--mute:#565c66;--line:#cfc9be;--bg:#e4e0d8;--card:#f8f6f2;--accent:#d2491f;}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-nav{position:sticky;top:0;z-index:10;background:rgba(239,237,232,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:10;background:rgba(228,224,216,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
 nav .name{font-weight:700;letter-spacing:.2px;text-decoration:none}
 nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:15px}
@@ -38,8 +38,10 @@ h2{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 8px;letter-spacing
 .stat span{font-size:13px;color:var(--mute)}
 video,.fig img{width:100%;display:block;border-radius:12px;background:#000}
 .main-media{margin-bottom:34px}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.duo{display:grid;grid-template-columns:1fr 1.348fr;gap:18px;align-items:start}
+.duo .fig{min-width:0}
 .duo .fig video{aspect-ratio:16/9;max-height:none;object-fit:cover}
+.duo .fig video.video-wide{aspect-ratio:1280/534;max-height:none;width:100%;object-fit:contain;background:#000}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;align-items:start}
 .trio .fig{min-width:0}
 .trio .fig video{aspect-ratio:16/9;max-height:none;object-fit:cover}
@@ -73,7 +75,7 @@ footer a{color:var(--ink)}
 .more-content.is-open{display:block}
 .fig video.video-loc{aspect-ratio:auto;max-height:310px;object-fit:contain}
 .fig video.video-padova{aspect-ratio:auto;max-height:290px;object-fit:contain}
-.trio .fig video.video-wide{aspect-ratio:16/9;max-height:none;width:100%;object-fit:contain;background:#000}
+
 .grid2 .stats{margin:4px 0 0}
 .more-text{max-width:740px;margin-top:24px}
 .more-text p{margin:0 0 16px}
@@ -114,10 +116,10 @@ footer a{color:var(--ink)}
   <div class="main-media">
     <div class="duo">
       <figure class="fig"><video src="assets/astra_walk.mp4" poster="assets/astra_walk_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Walking forward.</figcaption></figure>
-      <figure class="fig"><video src="assets/astra_stand.mp4" poster="assets/astra_stand_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Standing up and controlling body roll, pitch and yaw.</figcaption></figure>
+      <figure class="fig"><video class="video-wide" src="assets/astra_drop_compare.webm" poster="assets/astra_drop_compare_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Drop comparison: PID bounce (left) vs. active braking (right).</figcaption></figure>
     </div>
     <div class="trio">
-      <figure class="fig"><video class="video-wide" src="assets/astra_drop_compare.webm" poster="assets/astra_drop_compare_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Drop comparison: PID bounce (left) vs. active braking (right).</figcaption></figure>
+      <figure class="fig"><video src="assets/astra_stand.webm" poster="assets/astra_stand_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Standing up and controlling body roll, pitch and yaw.</figcaption></figure>
       <figure class="fig"><video src="assets/astra_turn.webm" poster="assets/astra_turn_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Turning in place.</figcaption></figure>
       <figure class="fig"><video src="assets/astra_curve.webm" poster="assets/astra_curve_poster.jpg" autoplay muted loop playsinline controls></video><figcaption>Trotting along a curved path.</figcaption></figure>
     </div>
