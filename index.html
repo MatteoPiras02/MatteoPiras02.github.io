@@ -41,6 +41,7 @@ video,.fig img{width:100%;display:block;border-radius:12px;background:#000}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .duo .fig video{aspect-ratio:16/9;max-height:none;object-fit:cover}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;align-items:start}
+.trio .fig{min-width:0}
 .trio .fig video{aspect-ratio:16/9;max-height:none;object-fit:cover}
 @media (max-width:820px){.trio{grid-template-columns:1fr}}
 @media (max-width:820px){.duo{grid-template-columns:1fr}}
@@ -72,7 +73,7 @@ footer a{color:var(--ink)}
 .more-content.is-open{display:block}
 .fig video.video-loc{aspect-ratio:auto;max-height:310px;object-fit:contain}
 .fig video.video-padova{aspect-ratio:auto;max-height:290px;object-fit:contain}
-.trio .fig video.video-wide{aspect-ratio:16/9;max-height:none;width:100%;object-fit:cover;background:#000}
+.trio .fig video.video-wide{aspect-ratio:16/9;max-height:none;width:100%;object-fit:contain;background:#000}
 .grid2 .stats{margin:4px 0 0}
 .more-text{max-width:740px;margin-top:24px}
 .more-text p{margin:0 0 16px}
